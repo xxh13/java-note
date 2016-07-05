@@ -1,3 +1,3 @@
 # java-note
 
-java 虚拟机阅读笔记
+java 深入理解虚拟机阅读笔记
