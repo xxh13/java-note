@@ -1,0 +1,63 @@
+package leetcode;
+
+public class Mutiply {
+
+	public static void main(String[] args) {
+		Mutiply m = new Mutiply();
+		String num1 = "129";
+		String num2 = "1321";
+		System.out.println(m.add(num1, num2));
+	}
+	
+	public String mutiply(String num1, String num2){
+		String result = "";
+		
+		
+		
+		return result;
+	}
+	
+	public String add(String num1, String num2){
+		String result = "";
+		int i=num1.length()-1,j=num2.length()-1;
+		int carry = 0;
+		
+		while(i>=0 && j>=0){
+			int temp = num1.charAt(i) - '0' + num2.charAt(j) - '0' + carry;
+			result = temp%10 + result;
+			carry = temp/10;
+			i--;
+			j--;
+		}
+		
+		if(i>0){
+			int carry1=carry;
+			while(i>=0){
+				int temp = num1.charAt(i) - '0' + carry1;
+				result = temp%10 + result;
+				carry1 = temp/10;
+				i--;
+			}
+			
+			carry = carry1;
+		}
+		
+		if(j>0){
+			int carry2 = carry;
+			while(j>=0){
+				int temp = num2.charAt(j) - '0' + carry2;
+				result = temp%10 + result;
+				carry2 = temp/10;
+				j--;
+			}
+			carry = carry2;
+		}
+		
+		if(carry > 0){
+			result = carry + result;
+		}
+		
+		return result;
+	}
+
+}
